@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditFragment"
+    tools:ignore="SpeakableTextPresentCheck">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:helperText="@string/condicion"
+            app:helperTextEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="@integer/count_max"
+            app:startIconDrawable="@drawable/ic_baseline_store_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvNombref"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NOMBRE"
+                android:inputType="textCapWords"
+                android:maxLength="50"
+
+                /></com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:helperText="@string/condicion"
+            app:helperTextEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="@integer/count_max"
+            app:startIconDrawable="@drawable/ic_phone_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvrTelefonof"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="TELEFONO"
+                android:inputType="textCapWords"
+                android:maxLength="50"
+
+                /></com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:helperText="@string/condicion"
+            app:helperTextEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="@integer/count_max"
+            app:startIconDrawable="@drawable/ic_link">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvLinkf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="LINK PAGINA"
+                android:inputType="textCapWords"
+                android:maxLength="50"
+
+                /></com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

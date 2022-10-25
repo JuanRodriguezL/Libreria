@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".RegistrarLibro">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/tool"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvAgregarLibro"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Agregar Libro"
+            android:textColor="@color/purple_200"
+            android:textStyle="bold"
+            android:textSize="25dp"/>
+
+
+
+        <EditText
+            android:id="@+id/textViewNombreCLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            android:hint="Nombre Libro"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/textViewAutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            android:inputType="text"
+            android:hint="Autor"
+            android:minHeight="48dp"
+            android:textSize="15dp" />
+
+
+        <EditText
+            android:id="@+id/textCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textSize="15dp" />
+
+
+        <EditText
+            android:id="@+id/imagenLibro"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Imagen Libro"
+            android:background="@color/gray"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/descripcion"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripcion"
+            android:background="@color/gray"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:textSize="15dp" />
+
+
+
+        <Button
+            android:id="@+id/btAgregarLibro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:text="Agregar Libro" />
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
