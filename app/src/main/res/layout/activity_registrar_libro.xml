@@ -8,8 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".RegistrarLibro">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/tool"/>
 
 
     <LinearLayout
@@ -95,7 +93,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
             android:text="Agregar Libro" />
 
 

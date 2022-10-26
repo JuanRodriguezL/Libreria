@@ -31,6 +31,10 @@ interface Dao {
 
     @Insert
     fun addLibro(librosEntity: LibrosEntity)
+
+    @Query("select * from Libros")
+    fun getAllLibros(): MutableList<LibrosEntity>
+
 }
 
 

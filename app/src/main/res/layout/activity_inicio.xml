@@ -7,12 +7,16 @@
     tools:context=".Inicio">
 
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/tool"/>
+    <Button
+        android:id="@+id/intento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
-       <androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
            android:layout_width="match_parent"
-           android:id="@+id/recicler"
+           android:id="@+id/reciclerLibrosDisponibles"
+           tools:listitem="@layout/item_libros_disponibles"
            android:layout_height="match_parent" />
 
 

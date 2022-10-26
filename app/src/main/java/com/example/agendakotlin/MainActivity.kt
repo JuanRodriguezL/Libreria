@@ -11,9 +11,10 @@ import org.jetbrains.anko.uiThread
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mbinding: ActivityMainBinding
-    private lateinit var cAdapter: ContactosAdapter
+
     private lateinit var layout: GridLayoutManager
     lateinit var contactoEntity: ContactoEntity
+
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,12 +35,11 @@ class MainActivity : AppCompatActivity() {
 
 
             doAsync {
-                contactoEntity =
-                    ContactosAplication.dataBase.contactosDao().login(correoSesion, passSesion)
+                contactoEntity = ContactosAplication.dataBase.contactosDao().login(correoSesion, passSesion)
 
                 println(ContactosAplication.dataBase.contactosDao().getAllContactos() + "juan"
                 )
-                uiThread {
+                uiThread() {
                     if (contactoEntity != null) {
                         val intent = Intent(this@MainActivity, Inicio::class.java)
                         startActivity(intent)
