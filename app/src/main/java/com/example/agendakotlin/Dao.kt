@@ -37,6 +37,8 @@ interface Dao {
     @Delete
     fun deleteLibro(librosEntity: LibrosEntity)
 
+    @Query("UPDATE Libros   SET  nombreLibro=:nombreL and autor=:autorL and cantidad=:cantidadL and imagen=:urlL and descripcion=:descripL")
+    fun updateLibro(nombreL: String,autorL: String,cantidadL: String,urlL: String,descripL: String)
 }
 
 

@@ -1,11 +1,13 @@
 package com.example.agendakotlin
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agendakotlin.databinding.ActivityInicioBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class Inicio : AppCompatActivity(), OnClickListener {
     private lateinit var inicioBinding: ActivityInicioBinding
@@ -74,8 +76,14 @@ class Inicio : AppCompatActivity(), OnClickListener {
 
 
     override fun onDelete(librosEntity: LibrosEntity) {
-        ContactosAplication.dataBase.contactosDao().deleteLibro(librosEntity)
-        lAdapter.delete(librosEntity)
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.dialog_delete)
+            .setPositiveButton(R.string.dialog_confirm, DialogInterface.OnClickListener { dialog, which ->
+                ContactosAplication.dataBase.contactosDao().deleteLibro(librosEntity)
+                lAdapter.delete(librosEntity)
+            })
+            .setNegativeButton(R.string.dialog_cancel,null)
+            .show()
     }
 
 }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActualizarLibroAdmin"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  Actualizar Libro"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="3dp" />
+
+
+
+
+    <EditText
+        android:id="@+id/textViewNombreCLibroUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/textViewAutorUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <EditText
+        android:id="@+id/textCantidadUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <EditText
+        android:id="@+id/imagenLibroUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/descripcionUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:background="@color/gray"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="15dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+    <Button
+        android:id="@+id/btActualizarLibro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Actualizar Libro" />
+
+</LinearLayout>
