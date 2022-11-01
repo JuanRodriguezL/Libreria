@@ -12,7 +12,7 @@ class ContactosAplication:Application() {
 
     override fun onCreate() {
         super.onCreate()
-       dataBase = Room.databaseBuilder(this, UsuariosDataBase::class.java,"Usuarios.db").build()
+       dataBase = Room.databaseBuilder(this, UsuariosDataBase::class.java,"Usuarios.db").allowMainThreadQueries().build()
     }
 
 }

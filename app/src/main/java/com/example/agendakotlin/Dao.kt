@@ -16,7 +16,6 @@ interface Dao {
     fun addContacto(contactoEntity: ContactoEntity)
 
 
-
     @Query("UPDATE Usuarios   SET  correo=:correoI ")
     fun updateUsuario(correoI: String)
 
@@ -34,6 +33,9 @@ interface Dao {
 
     @Query("select * from Libros")
     fun getAllLibros(): MutableList<LibrosEntity>
+
+    @Delete
+    fun deleteLibro(librosEntity: LibrosEntity)
 
 }
 

@@ -1,9 +1,9 @@
 package com.example.agendakotlin
 
 interface OnClickListener {
-    fun onClick(contactos: ContactoEntity)
-    fun onClick(entity: LibrosEntity)
-    fun onDelete(contactos: ContactoEntity)
+    fun onClick(librosEntity: LibrosEntity)
+
+    fun onDelete(librosEntity: LibrosEntity)
 
 
 

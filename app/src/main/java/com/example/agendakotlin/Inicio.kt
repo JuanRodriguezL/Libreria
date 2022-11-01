@@ -6,11 +6,9 @@ import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agendakotlin.databinding.ActivityInicioBinding
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class Inicio : AppCompatActivity(), OnClickListener {
-    lateinit var inicioBinding: ActivityInicioBinding
+    private lateinit var inicioBinding: ActivityInicioBinding
     private lateinit var lAdapter: DisponiblesAdapter
     private lateinit var layout: GridLayoutManager
 
@@ -18,17 +16,44 @@ class Inicio : AppCompatActivity(), OnClickListener {
         super.onCreate(savedInstanceState)
         inicioBinding = ActivityInicioBinding.inflate(layoutInflater)
         setContentView(inicioBinding.root)
-        println("inicio")
+
 
         setupRecicler()
-      inicioBinding.intento.setOnClickListener {
-          val intent = Intent(this, RegistrarLibro::class.java)
-          startActivity(intent)
-      }
+        inicioBinding.tres.setOnClickListener {
+            val popupMenu = PopupMenu(this, it)
+            popupMenu.setOnMenuItemClickListener { item ->
+
+
+                when (item.itemId) {
+                    R.id.ingreso -> {
+                        val intent = Intent(this, RegistrarLibro::class.java)
+                        startActivity(intent)
+                        true
+                    }
+
+                    R.id.salir -> {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        true
+                    }
+
+                 /*   R.id.prestados -> {
+                        val intent = Intent(this, RegistrarLibro::class.java)
+                        startActivity(intent)
+                        true
+                    }*/
+
+                    else -> false
+                }
+            }
+
+            popupMenu.inflate(R.menu.menu)
+            popupMenu.show()
+        }
     }
 
     private fun setupRecicler() {
-        lAdapter = DisponiblesAdapter(mutableListOf(),this)
+        lAdapter = DisponiblesAdapter(mutableListOf(), this)
         layout = GridLayoutManager(this, 2)
         getLibrosDis()
         inicioBinding.reciclerLibrosDisponibles.apply {
@@ -38,29 +63,19 @@ class Inicio : AppCompatActivity(), OnClickListener {
         }
     }
 
-
     private fun getLibrosDis() {
-        doAsync {
-
-            val libro = ContactosAplication.dataBase.contactosDao().getAllLibros()
-            uiThread {
-            lAdapter.setLibros(libro)
-            }
-        }
+        val libro = ContactosAplication.dataBase.contactosDao().getAllLibros()
+        lAdapter.setLibros(libro)
     }
 
-
-
-    override fun onClick(contactos: ContactoEntity) {
+    override fun onClick(librosEntity: LibrosEntity) {
         TODO("Not yet implemented")
     }
 
-    override fun onClick(entity: LibrosEntity) {
-        TODO("Not yet implemented")
-    }
 
-    override fun onDelete(contactos: ContactoEntity) {
-        TODO("Not yet implemented")
+    override fun onDelete(librosEntity: LibrosEntity) {
+        ContactosAplication.dataBase.contactosDao().deleteLibro(librosEntity)
+        lAdapter.delete(librosEntity)
     }
 
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.agendakotlin.databinding.ItemLibrosDisponiblesBinding
 
 class DisponiblesAdapter(
@@ -29,10 +30,23 @@ class DisponiblesAdapter(
 
         with(holder) {
             setListener(libro)
+            Glide.with(mContext)
+                .load(libro.imagen)
+                .into(binding.imagenLibro)
+
             binding.textView3.text = libro.nombreLibro
             binding.textView4.text = libro.autor
         }
     }
+
+    fun delete(librosEntity: LibrosEntity) {
+        val index = libros.indexOf(librosEntity)
+        if (index != -1) {
+            libros.removeAt(index)
+            notifyItemRemoved(index)
+        }
+    }
+
 
     fun setLibros(libro: MutableList<LibrosEntity>) {
         this.libros = libro
@@ -43,11 +57,12 @@ class DisponiblesAdapter(
         val binding = ItemLibrosDisponiblesBinding.bind(view)
 
         fun setListener(librosEntity: LibrosEntity) {
-            binding.root.setOnClickListener {
-                listener.onClick(librosEntity)
+                binding.root.setOnLongClickListener {
+                    listener.onDelete(librosEntity)
+                    true
+                }
             }
         }
 
     }
 
-}

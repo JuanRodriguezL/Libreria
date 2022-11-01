@@ -11,10 +11,7 @@ class RegistroUsu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         rBinding = ActivityRegistroUsuBinding.inflate(layoutInflater)
         setContentView(rBinding.root)
-
         insertUsuario()
-
-
     }
 
     fun insertUsuario() {
