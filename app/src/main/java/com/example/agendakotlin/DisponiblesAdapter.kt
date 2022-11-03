@@ -53,10 +53,23 @@ class DisponiblesAdapter(
         notifyDataSetChanged()
     }
 
+    fun update(librosEntity: LibrosEntity) {
+        val index = libros.indexOf(librosEntity)
+        if (index!= -1){
+            libros.set(index,librosEntity)
+            notifyItemChanged(index)
+        }
+
+    }
+
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = ItemLibrosDisponiblesBinding.bind(view)
 
         fun setListener(librosEntity: LibrosEntity) {
+
+            binding.root.setOnClickListener {
+                listener.onClick(librosEntity) }
+
                 binding.root.setOnLongClickListener {
                     listener.onDelete(librosEntity)
                     true

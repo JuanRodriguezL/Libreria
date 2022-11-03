@@ -8,11 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agendakotlin.databinding.ActivityInicioBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.android.synthetic.main.activity_registrar_libro.*
 
 class Inicio : AppCompatActivity(), OnClickListener {
     private lateinit var inicioBinding: ActivityInicioBinding
     private lateinit var lAdapter: DisponiblesAdapter
     private lateinit var layout: GridLayoutManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +41,7 @@ class Inicio : AppCompatActivity(), OnClickListener {
                         true
                     }
 
-                 /*   R.id.prestados -> {
+                    /*   R.id.prestados -> {
                         val intent = Intent(this, RegistrarLibro::class.java)
                         startActivity(intent)
                         true
@@ -70,19 +72,40 @@ class Inicio : AppCompatActivity(), OnClickListener {
         lAdapter.setLibros(libro)
     }
 
+
+
+
     override fun onClick(librosEntity: LibrosEntity) {
-        TODO("Not yet implemented")
-    }
+        librosEntity.nombreLibro = "juan"
+        librosEntity.autor = "juan"
+        librosEntity.cantidad = "12"
+        librosEntity.imagen = "juan"
+        librosEntity.descripcion = "juan"
+
+
+            ContactosAplication.dataBase.contactosDao().updateLibro(librosEntity)
+        lAdapter.update(librosEntity)
+
+
+
+         /*val args = Bundle()
+         args.putParcelable("parceableEntity", librosEntity)
+         val i = Intent(this, ActualizarLibroAdmin::class.java)
+         i.putExtras(args)
+         startActivity(i)*/
+
+     }
 
 
     override fun onDelete(librosEntity: LibrosEntity) {
         MaterialAlertDialogBuilder(this)
             .setTitle(R.string.dialog_delete)
-            .setPositiveButton(R.string.dialog_confirm, DialogInterface.OnClickListener { dialog, which ->
-                ContactosAplication.dataBase.contactosDao().deleteLibro(librosEntity)
-                lAdapter.delete(librosEntity)
-            })
-            .setNegativeButton(R.string.dialog_cancel,null)
+            .setPositiveButton(R.string.dialog_confirm,
+                DialogInterface.OnClickListener { dialog, which ->
+                    ContactosAplication.dataBase.contactosDao().deleteLibro(librosEntity)
+                    lAdapter.delete(librosEntity)
+                })
+            .setNegativeButton(R.string.dialog_cancel, null)
             .show()
     }
 

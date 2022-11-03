@@ -1,9 +1,7 @@
 package com.example.agendakotlin
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
-import com.example.agendakotlin.ContactoEntity
 
 
 @Dao
@@ -37,8 +35,8 @@ interface Dao {
     @Delete
     fun deleteLibro(librosEntity: LibrosEntity)
 
-    @Query("UPDATE Libros   SET  nombreLibro=:nombreL and autor=:autorL and cantidad=:cantidadL and imagen=:urlL and descripcion=:descripL")
-    fun updateLibro(nombreL: String,autorL: String,cantidadL: String,urlL: String,descripL: String)
+    @Update
+    fun updateLibro( librosEntity: LibrosEntity)
 }
 
 
