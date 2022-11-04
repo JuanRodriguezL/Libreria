@@ -76,7 +76,14 @@ class Inicio : AppCompatActivity(), OnClickListener {
 
 
     override fun onClick(librosEntity: LibrosEntity) {
-        librosEntity.nombreLibro = "juan"
+
+        val args = Bundle()
+        args.putParcelable("parceableEntity", librosEntity)
+        val i = Intent(this, ActualizarLibro::class.java)
+        i.putExtras(args)
+        startActivity(i)
+
+    /*    librosEntity.nombreLibro = "juan"
         librosEntity.autor = "juan"
         librosEntity.cantidad = "12"
         librosEntity.imagen = "juan"
@@ -84,15 +91,11 @@ class Inicio : AppCompatActivity(), OnClickListener {
 
 
             ContactosAplication.dataBase.contactosDao().updateLibro(librosEntity)
-        lAdapter.update(librosEntity)
+        lAdapter.update(librosEntity)*/
 
 
 
-         /*val args = Bundle()
-         args.putParcelable("parceableEntity", librosEntity)
-         val i = Intent(this, ActualizarLibroAdmin::class.java)
-         i.putExtras(args)
-         startActivity(i)*/
+
 
      }
 
