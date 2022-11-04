@@ -19,7 +19,7 @@ interface Dao {
 
 
 
-    @Query("SELECT * FROM  Usuarios  WHERE   correo=:correoI and passwordIni=:pass LIMIT 1")
+    @Query("SELECT * FROM  Usuarios  WHERE   correo=:correoI and passwordIni=:pass ")
     fun login(correoI: String, pass:String):ContactoEntity
 
 
@@ -37,6 +37,9 @@ interface Dao {
 
     @Update
     fun updateLibro( librosEntity: LibrosEntity)
+
+    @Insert
+    fun addPrestamo(prestadosEntity: LibrosPrestadosEntity)
 }
 
 

@@ -83,20 +83,6 @@ class Inicio : AppCompatActivity(), OnClickListener {
         i.putExtras(args)
         startActivity(i)
 
-    /*    librosEntity.nombreLibro = "juan"
-        librosEntity.autor = "juan"
-        librosEntity.cantidad = "12"
-        librosEntity.imagen = "juan"
-        librosEntity.descripcion = "juan"
-
-
-            ContactosAplication.dataBase.contactosDao().updateLibro(librosEntity)
-        lAdapter.update(librosEntity)*/
-
-
-
-
-
      }
 
 
