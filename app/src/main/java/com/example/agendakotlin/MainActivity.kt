@@ -7,8 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agendakotlin.databinding.ActivityMainBinding
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mbinding: ActivityMainBinding
@@ -34,30 +32,30 @@ class MainActivity : AppCompatActivity() {
             val correoSesion = mbinding.textViewCorreoSesion.text.toString().trim()
             val passSesion = mbinding.textPassSesion.text.toString().trim()
 
-            if(correoSesion.equals("admin")&&passSesion.equals("1234")){
-
-                val intent = Intent(this@MainActivity, Inicio::class.java)
-                startActivity(intent)
-            }
 
 
-            doAsync {
-                val login = ContactosAplication.dataBase.contactosDao().login(correoSesion, passSesion)
 
-                uiThread() {
-                    if (login != null) {
-                        val intent = Intent(this@MainActivity, UsuMisLibros::class.java)
+                    if (correoSesion.equals("admin") && passSesion.equals("1234")) {
+                        val intent = Intent(this@MainActivity, Inicio::class.java)
                         startActivity(intent)
+                    }
+                val login =
+                    ContactosAplication.dataBase.contactosDao().login(correoSesion, passSesion)
+                if (login != null) {
+                    val intent = Intent(this@MainActivity, UsuMisLibros::class.java)
+                    startActivity(intent)
+                } else {
+                    if (!correoSesion.equals("admin") && !passSesion.equals("1234"))
+                        Toast.makeText(this@MainActivity,
+                            "error de credenciales",
+                            Toast.LENGTH_SHORT)
+                            .show()
+                }
 
-
-                    }else{
-                        Toast.makeText(this@MainActivity,"error de credenciales",Toast.LENGTH_SHORT).show()
                     }
                 }
             }
 
-
-        }
 
 
         /*  mbinding.juan.setOnClickListener {
@@ -93,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                   cAdapter.setContactos(contacto)
               }
           }*/
-    }
+
 
 
     /* private fun setupRecicler() {
@@ -122,4 +120,4 @@ class MainActivity : AppCompatActivity() {
     }
 */
 
-}
+

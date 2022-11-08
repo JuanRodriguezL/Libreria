@@ -7,10 +7,7 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
 import com.example.agendakotlin.databinding.ActivityUsuPrestarLibroBinding
-import java.time.Instant
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
+
 
 class UsuPrestarLibro : AppCompatActivity() {
     lateinit var  usuPreLibroBinding: ActivityUsuPrestarLibroBinding
