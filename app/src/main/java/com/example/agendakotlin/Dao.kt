@@ -40,6 +40,9 @@ interface Dao {
 
     @Insert
     fun addPrestamo(prestadosEntity: LibrosPrestadosEntity)
+
+    @Query("select * from Prestamos")
+    fun getAllLibrosPrestados(): MutableList<LibrosPrestadosEntity>
 }
 
 
