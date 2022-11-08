@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Agendakotlin">
         <activity
+            android:name=".UsuPrestarLibro"
+            android:exported="true" />
+        <activity
             android:name=".UsuLibrosDisponibles"
             android:exported="true" />
         <activity

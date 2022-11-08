@@ -1,5 +1,6 @@
 package com.example.agendakotlin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -35,7 +36,11 @@ class UsuLibrosDisponibles : AppCompatActivity(), OnClickListener {
     }
 
     override fun onClick(librosEntity: LibrosEntity) {
-        TODO("Not yet implemented")
+        val args = Bundle()
+        args.putParcelable("parceableEntity", librosEntity)
+        val i = Intent(this, UsuPrestarLibro::class.java)
+        i.putExtras(args)
+        startActivity(i)
     }
 
     override fun onDelete(librosEntity: LibrosEntity) {
