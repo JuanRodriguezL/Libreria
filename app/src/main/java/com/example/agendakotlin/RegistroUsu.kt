@@ -13,6 +13,11 @@ class RegistroUsu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         rBinding = ActivityRegistroUsuBinding.inflate(layoutInflater)
         setContentView(rBinding.root)
+
+        rBinding.textViewIniciar.setOnClickListener {
+            val int = Intent(this, MainActivity::class.java)
+            startActivity(int)
+        }
         insertUsuario()
     }
 

@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="BIENVENIDO  \n "
+            android:text="Disfruta de mles de libros de la palma\n de tu mano "
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20dp"/>
@@ -92,6 +92,17 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:text="CREAR" />
+
+        <TextView
+            android:id="@+id/textViewIniciar"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tienes Cuenta? Inicia Sesion"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
 
 
     </LinearLayout>

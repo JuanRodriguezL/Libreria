@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/container_main"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
     android:orientation="vertical"
@@ -17,31 +16,31 @@
 
         <TextView
             android:id="@+id/tviniciar"
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="INICIAR SESION"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="25dp"/>
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvmensajeInicial"
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="ven a leer y deja que tu imaginacion \n "
+            android:text="Ven a leer y deja que tu imaginacion \n pueda volar sin limites"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/textViewCorreoSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="60dp"
             android:background="@color/gray"
             android:hint="Correo Electronico"
             android:minHeight="48dp"
@@ -49,32 +48,33 @@
 
         <EditText
             android:id="@+id/textPassSesion"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
+            android:layout_marginTop="12dp"
             android:background="@color/gray"
+            android:hint="Contraseña"
             android:minHeight="48dp"
             android:textSize="15dp" />
 
 
         <Button
-            android:background="@drawable/custom_button"
-            android:layout_marginTop="100dp"
             android:id="@+id/iniciarSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/custom_button"
             android:text="INICIAR SESION" />
 
 
-        <Button
-            android:id="@+id/registrarse"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textViewCrear"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:text="registrarse"
-            android:background="@drawable/custom_button"/>
+            android:text="No estas Registrado? Crear Cuenta "
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="@color/white"/>
 
 
     </LinearLayout>

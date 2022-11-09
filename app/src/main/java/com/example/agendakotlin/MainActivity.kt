@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         mbinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mbinding.root)
 
-        mbinding.registrarse.setOnClickListener {
+        mbinding.textViewCrear.setOnClickListener {
             val intent = Intent(this, RegistroUsu::class.java)
             startActivity(intent)
         }
