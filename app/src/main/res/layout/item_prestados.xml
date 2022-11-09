@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
+
+    android:background="#9E9E9E"
     android:layout_height="wrap_content">
 
 
@@ -11,8 +13,7 @@
         android:id="@+id/imagenLibrorestado"
         android:layout_width="80dp"
         android:layout_height="100dp"
-
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
@@ -30,14 +31,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textView4prestar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+        android:background="@color/white"
+            android:layout_marginRight="20dp"
             android:gravity="center"
+            android:textColor="@color/black"
             android:text="TextView" />
 
         <TextView
@@ -45,6 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
+            android:layout_marginRight="20dp"
+            android:background="@color/white"
+            android:textColor="@color/black"
             android:gravity="center"/>
     </LinearLayout>
 

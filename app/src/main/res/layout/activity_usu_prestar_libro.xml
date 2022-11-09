@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     android:layout_height="match_parent"
     tools:context=".UsuPrestarLibro">
     <TextView
@@ -12,6 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Prestar Libro"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +26,7 @@
         android:layout_height="4dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@color/black"
+        android:background="#F44336"
         app:layout_constraintBottom_toBottomOf="@id/textView"
  />
 
@@ -39,6 +43,7 @@
         android:id="@+id/textViewPrestarNombre"
         android:layout_width="match_parent"
         android:gravity="center"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:hint="Nombre Libro" />
 
@@ -47,6 +52,7 @@
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:gravity="center"
         android:hint="Descripcion Libro" />
 
@@ -58,14 +64,15 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
 
-        android:background="@color/black"
+        android:background="#F44336"
         app:layout_constraintStart_toStartOf="@id/buttonPrestar"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="646dp" />
 
     <Button
         android:id="@+id/buttonPrestarConfirma"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom_button"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"

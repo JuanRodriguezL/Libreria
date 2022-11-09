@@ -59,6 +59,7 @@
 
 
         <Button
+            android:background="@drawable/custom_button"
             android:layout_marginTop="100dp"
             android:id="@+id/iniciarSesion"
             android:layout_width="match_parent"
@@ -72,7 +73,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:text="registrarse" />
+            android:text="registrarse"
+            android:background="@drawable/custom_button"/>
 
 
     </LinearLayout>

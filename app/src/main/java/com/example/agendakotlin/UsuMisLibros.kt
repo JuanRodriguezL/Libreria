@@ -23,7 +23,7 @@ class UsuMisLibros : AppCompatActivity() {
     }
     private fun setupRecicler() {
         adapterPrestado = PrestadosAdapter(mutableListOf())
-        prestadoLayout = GridLayoutManager(this, 2)
+        prestadoLayout = GridLayoutManager(this, 1)
         getLibrosPrestado()
         usuBindig.reciclerPrestamos.apply {
             setHasFixedSize(true)
