@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="CREA TU CUENTA"
-            android:textColor="@color/purple_200"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="25dp"/>
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="BIENVENIDO  \n "
-            android:textColor="@color/purple_200"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20dp"/>
 
