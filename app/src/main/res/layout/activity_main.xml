@@ -39,23 +39,27 @@
         <EditText
             android:id="@+id/textViewCorreoSesion"
             android:layout_width="match_parent"
+            android:paddingRight="10dp"
+            android:drawableEnd="@drawable/ic_baseline_email"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:background="@color/gray"
+            android:background="@drawable/editext"
             android:hint="Correo Electronico"
             android:minHeight="48dp"
             android:textSize="15dp" />
+
 
         <EditText
             android:id="@+id/textPassSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@color/gray"
+            android:background="@drawable/editext"
+            android:paddingRight="10dp"
+            android:drawableEnd="@drawable/ic_baseline_lock_24"
             android:hint="Contraseña"
             android:minHeight="48dp"
             android:textSize="15dp" />
-
 
         <Button
             android:id="@+id/iniciarSesion"
