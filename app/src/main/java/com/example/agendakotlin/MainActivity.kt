@@ -5,14 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agendakotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mbinding: ActivityMainBinding
 
-    private lateinit var layout: GridLayoutManager
-    lateinit var contactoEntity: ContactoEntity
 
 
     @SuppressLint("NotifyDataSetChanged")

@@ -7,13 +7,9 @@
     android:background="@color/black"
     tools:context=".Inicio">
 
-    <ImageView
-        android:id="@+id/tres"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="right"
-        android:src="@drawable/ic_baseline_arrow_menu"
-        tools:ignore="RtlHardcoded" />
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolEscencia"/>
+
 
     <TextView
         android:layout_width="match_parent"

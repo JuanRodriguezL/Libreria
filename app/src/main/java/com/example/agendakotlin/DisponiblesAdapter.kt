@@ -1,5 +1,6 @@
 package com.example.agendakotlin
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,7 @@ class DisponiblesAdapter(
 ) : RecyclerView.Adapter<DisponiblesAdapter.ViewHolder>() {
 
 
-    lateinit var mContext: Context
+    private lateinit var mContext: Context
 
     override fun getItemCount(): Int = libros.size
 
@@ -48,19 +49,20 @@ class DisponiblesAdapter(
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setLibros(libro: MutableList<LibrosEntity>) {
         this.libros = libro
         notifyDataSetChanged()
     }
 
-    fun update(librosEntity: LibrosEntity) {
+/*    fun update(librosEntity: LibrosEntity) {
         val index = libros.indexOf(librosEntity)
         if (index!= -1){
             libros.set(index,librosEntity)
             notifyItemChanged(index)
         }
 
-    }
+    }*/
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = ItemLibrosDisponiblesBinding.bind(view)

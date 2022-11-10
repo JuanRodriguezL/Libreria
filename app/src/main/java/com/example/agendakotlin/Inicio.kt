@@ -3,12 +3,13 @@ package com.example.agendakotlin
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agendakotlin.databinding.ActivityInicioBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.android.synthetic.main.activity_registrar_libro.*
+
 
 class Inicio : AppCompatActivity(), OnClickListener {
     private lateinit var inicioBinding: ActivityInicioBinding
@@ -23,10 +24,11 @@ class Inicio : AppCompatActivity(), OnClickListener {
 
 
         setupRecicler()
-        inicioBinding.tres.setOnClickListener {
+        inicioBinding.toolEscencia.backActi.visibility = View.GONE
+        inicioBinding.toolEscencia.deplegar.visibility = View.VISIBLE
+        inicioBinding.toolEscencia.deplegar.setOnClickListener {
             val popupMenu = PopupMenu(this, it)
             popupMenu.setOnMenuItemClickListener { item ->
-
 
                 when (item.itemId) {
                     R.id.ingreso -> {

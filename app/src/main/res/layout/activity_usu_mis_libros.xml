@@ -7,12 +7,14 @@
     android:orientation="vertical"
     android:background="@color/black"
     tools:context=".UsuMisLibros">
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolHistorial"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
         android:textSize="25dp"
         android:textStyle="bold"
         android:text="Historial Prestamos"
@@ -35,7 +37,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reciclerPrestamos"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="@id/view"
         app:layout_constraintTop_toTopOf="@id/textView" />

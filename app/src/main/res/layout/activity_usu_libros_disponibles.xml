@@ -8,13 +8,10 @@
     android:orientation="vertical"
     tools:context=".UsuLibrosDisponibles">
 
-    <ImageView
-        android:id="@+id/usuLibrosImagen"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="right"
-        android:src="@drawable/ic_baseline_arrow_menu"
-        tools:ignore="RtlHardcoded" />
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolDispobible"/>
+
 
     <TextView
         android:layout_width="match_parent"

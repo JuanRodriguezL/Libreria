@@ -2,20 +2,28 @@ package com.example.agendakotlin
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.agendakotlin.databinding.ActivityUsuLibrosDisponiblesBinding
 
 class UsuLibrosDisponibles : AppCompatActivity(), OnClickListener {
 
-    lateinit var lAdapter: DisponiblesAdapter
+    private lateinit var lAdapter: DisponiblesAdapter
     private lateinit var layout: GridLayoutManager
-    lateinit var usuLibrosBinding: ActivityUsuLibrosDisponiblesBinding
+    private lateinit var usuLibrosBinding: ActivityUsuLibrosDisponiblesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
         usuLibrosBinding = ActivityUsuLibrosDisponiblesBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(usuLibrosBinding.root)
+
+        usuLibrosBinding.toolDispobible.deplegar.visibility = View.GONE
+        usuLibrosBinding.toolDispobible.backActi.visibility = View.VISIBLE
+        usuLibrosBinding.toolDispobible.backActi.setOnClickListener {
+            val intent = Intent(this, UsuMisLibros::class.java)
+            startActivity(intent)
+        }
         setupRecicler()
     }
 

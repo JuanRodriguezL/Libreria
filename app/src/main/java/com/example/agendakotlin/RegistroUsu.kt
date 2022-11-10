@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.agendakotlin.databinding.ActivityRegistroUsuBinding
 
 class RegistroUsu : AppCompatActivity() {
-    lateinit var rBinding: ActivityRegistroUsuBinding
+    private lateinit var rBinding: ActivityRegistroUsuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

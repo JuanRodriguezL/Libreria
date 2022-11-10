@@ -8,6 +8,9 @@
     android:background="@color/black"
     tools:context=".ActualizarLibro">
 
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolUpdate"/>
+
     <TextView
         android:id="@+id/tvActualLibro"
         android:layout_marginTop="5dp"

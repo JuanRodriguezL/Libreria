@@ -10,7 +10,7 @@ import com.example.agendakotlin.databinding.ActivityUsuPrestarLibroBinding
 
 
 class UsuPrestarLibro : AppCompatActivity() {
-    lateinit var  usuPreLibroBinding: ActivityUsuPrestarLibroBinding
+    private lateinit var  usuPreLibroBinding: ActivityUsuPrestarLibroBinding
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class UsuPrestarLibro : AppCompatActivity() {
             val prestamos = LibrosPrestadosEntity(
                 nombrePrestamo = inf?.nombreLibro.toString(),
                 cantidadPrestamo = inf?.cantidad!!.toLong(),
-                urlImagenPrestamo = inf.imagen.toString(),
+                urlImagenPrestamo = inf.imagen,
                 fechaPrestamo =" dateTime.toString()",
                 share = "holi")
             ContactosAplication.dataBase.contactosDao().addPrestamo(prestamos)
